@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>e-commerce</title>
+        <h:outputStylesheet name="./css/theme.css"></h:outputStylesheet>
+        <h:outputScript name="./js/jquery.js"></h:outputScript>
+        <h:outputScript name="./js/jquery-1.11.3.min.js"></h:outputScript>
+        <h:outputScript name="./js/jquery.maskedinput.js"></h:outputScript>
+        <h:outputScript name="./js/jquery.funcao.js"></h:outputScript>
+        <h:outputScript name="./js/bootstrap.js"></h:outputScript>  
+    </h:head>
+    <h:body>
+        <div class="container fundo">
+            <div class="row">
+                <div class="">
+                    <div class="topo">
+                        <div class="logocombat">
+                            <img src="resources/img/combatAirSoft.png" width="100%" height="100%"></img>
+                            <p class="textocombat">Combat AirSoft</p>
+                        </div>
+                    </div> 
+
+                    <div class="row">
+                        <div class="carrinho">
+                            <img src="resources/img/carrinho.png"></img>
+                            <p>Minhas Compras</p>
+                            <div class="contador">
+                                <label for="contador">Itens '0'</label>  
+
+                            </div>
+                        </div>           
+                    </div>
+
+                    <div class="row">
+                        <div class="cadastro">
+                            <button type="button" class="btn btn-info btn-lg botao" data-toggle="modal" data-target="#login">Login</button>
+
+                            <!-- Modal -->
+                            <div id="login" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+                                            <form class="form-signin">
+                                                <h2 align="center" class="form-signin-heading">Bem-Vindo</h2>
+                                                <label for="inputEmail" class="sr-only">Email</label>
+                                                <input type="email" id="inputEmail" class="form-control" placeholder="email" required="" autofocus=""></input>
+                                                <label for="inputPassword" class="sr-only">Senha</label>
+                                                <input type="password" id="inputPassword" class="form-control" placeholder="senha" required=""></input>
+
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-info btn-lg botao" data-toggle="modal" data-target="#cadastro">Cadastre-se</button>
+
+                            <!-- Modal -->
+                            <div id="cadastro" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+                                            <h2 align="center">Formulário de Cadastro</h2>
+                                        </div>
+
+                                        <form class="form-horizontal" role="form">
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="nome">Nome:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="nome" placeholder="Nome Completo" required="true"></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="cpf">CPF:</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="cpf" placeholder="CPF" required="true"></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="telefone">Telefone:</label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" class="form-control" id="telefone" placeholder="Telefone" required="true"></input>
+                                                </div>
+
+                                                <label class="control-label col-sm-2" for="celular">Celular:</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="celular" placeholder="Celular" required="true"></input>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="dataNasc">Data de Nascimento:</label>
+                                                <div class="col-sm-4">
+                                                    <input type="date" class="form-control" id="dataNasc" placeholder="Data de Nascimento" required="true"></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="">Endereço:</label>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label class="control-label col-sm-2" for="rua">Rua:</label>
+                                                <div class="col-sm-5"> 
+                                                    <input type="text" class="form-control" id="rua" placeholder="Rua" required="true"></input>
+                                                </div>
+
+                                                <label class="control-label col-sm-2" for="num">Número:</label>
+                                                <div class="col-sm-2"> 
+                                                    <input type="numero" class="form-control" id="num" placeholder="Nº" required="true"></input>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label class="control-label col-sm-2" for="bairro">Bairro:</label>
+                                                <div class="col-sm-3"> 
+                                                    <input type="text" class="form-control" id="bairro" placeholder="Bairro" required="true"></input>
+                                                </div>
+
+                                                <label class="control-label col-sm-2" for="cidade">Cidade:</label>
+                                                <div class="col-sm-4"> 
+                                                    <input type="text" class="form-control" id="cidade" placeholder="Cidade" required="true"></input>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label class="control-label col-sm-2" for="estado">Estado:</label>
+                                                <div class="col-sm-3"> 
+                                                    <select class="form-control" id="estado" name="estado">
+                                                        <option>Selecione:</option>
+                                                        <option value="AC">AC</option>
+                                                        <option value="AL">AL</option>
+                                                        <option value="AP">AP</option>
+                                                        <option value="AM">AM</option>
+                                                        <option value="BA">BA</option>
+                                                        <option value="CE">CE</option>
+                                                        <option value="DF">DF</option>
+                                                        <option value="ES">ES</option>
+                                                        <option value="GO">GO</option>
+                                                        <option value="MA">MA</option>
+                                                        <option value="MT">MT</option>
+                                                        <option value="MS">MS</option>
+                                                        <option value="MG">MG</option>
+                                                        <option value="PA">PA</option>
+                                                        <option value="PB">PB</option>
+                                                        <option value="PR">PR</option>
+                                                        <option value="PE">PE</option>
+                                                        <option value="PI">PI</option>
+                                                        <option value="RJ">RJ</option>
+                                                        <option value="RN">RN</option>
+                                                        <option value="RS">RS</option>
+                                                        <option value="RO">RO</option>
+                                                        <option value="RR">RR</option>
+                                                        <option value="SC">SC</option>
+                                                        <option value="SP">SP</option>
+                                                        <option value="SE">SE</option>
+                                                        <option value="TO">TO</option>
+                                                    </select>
+                                                </div>
+
+                                                <label class="control-label col-sm-2" for="cep">CEP</label>
+                                                <div class="col-sm-3"> 
+                                                    <input type="text" class="form-control" id="cep" placeholder="CEP" required="true"></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label class="control-label col-sm-2" for="email">E-Mail:</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="email" class="form-control" id="email" placeholder="E-Mail" required="true"></input>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="senha">Senha:</label>
+                                                <div class="col-sm-3"> 
+                                                    <input type="password" class="form-control" id="senha" placeholder="Senha" required="true"></input>
+                                                </div>
+
+                                                <label class="control-label col-sm-2" for="confirmasenha">Confirma:</label>
+                                                <div class="col-sm-4"> 
+                                                    <input type="password" class="form-control" id="confirmasenha" placeholder="Confirma Senha" required="true"></input>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group"> 
+                                                <div class="col-sm-offset-2 col-sm-5">
+                                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                                </div>
+
+                                                <div class="col-sm-offset-0 col-sm-5">
+                                                    <button type="reset" class="btn btn-danger">Limpar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div> 
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav menu">
+                            <li><a href="#">home</a></li>
+                            <li><a href="#">equipamentos</a></li>
+                            <li><a href="#">suprimentos</a></li> 
+                            <li><a href="#">acessórios</a></li> 
+                            <li><a href="#">sobre nós</a></li> 
+                        </ul>
+                        <div class="busca">
+                            <div class="input-group">
+
+                                <input type="search" class="form-control" id="busca" name="s" placeholder="Digite uma palavra chave" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="btn-blog-search" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    </span>
+                                </input>    
+                            </div>
+                        </div>
+                    </div>
+
+                </nav>
+
+            </div>
+
+            <div class="row">
+                <div class="centro">
+
+                    <div class="col-md-3">
+                        <div class="produtos">
+                            <div class="moldura">
+                                <div id="pistola" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#pistola" data-slide-to="0" class="active"></li>
+                                        <li data-target="#pistola" data-slide-to="1"></li>
+                                        <li data-target="#pistola" data-slide-to="2"></li>
+                                        <li data-target="#pistola" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="resources/img/pistola1.png" alt="pistola" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/pistola2.png" alt="pistola" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/pistola3.png" alt="pistola" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/pistola4.png" alt="pistola" width="460" height="345"></img>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#pistola" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#pistola" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="adicionar">
+                                    <button class="btn btn-comprar">Comprar <i class="glyphicon glyphicon-shopping-cart"></i></button>   
+                                </div>
+
+                                <span class="preco">Preço R$ 120,00</span>
+                                <span class="marca"><img src="resources/img/combatAirSoft.png" width="50" height="50"></img></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="produtos">
+                            <div class="moldura">
+                                <div id="capacete" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#capacete" data-slide-to="0" class="active"></li>
+                                        <li data-target="#capacete" data-slide-to="1"></li>
+                                        <li data-target="#capacete" data-slide-to="2"></li>
+                                        <li data-target="#capacete" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="resources/img/capacete1.png" alt="capacete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/capacete2.png" alt="capacete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/capacete3.png" alt="capacete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/capacete4.png" alt="capacete" width="460" height="345"></img>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#capacete" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#capacete" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="adicionar">
+                                    <button class="btn btn-comprar">Comprar <i class="glyphicon glyphicon-shopping-cart"></i></button>   
+                                </div>
+
+                                <span class="preco">Preço R$ 200,00</span>
+                                <span class="marca"><img src="resources/img/combatAirSoft.png" width="50" height="50"></img></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="produtos">
+                            <div class="moldura">
+                                <div id="colete" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#colete" data-slide-to="0" class="active"></li>
+                                        <li data-target="#colete" data-slide-to="1"></li>
+                                        <li data-target="#colete" data-slide-to="2"></li>
+                                        <li data-target="#colete" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="resources/img/colete1.png" alt="colete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/colete2.png" alt="colete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/colete3.png" alt="colete" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/colete4.png" alt="colete" width="460" height="345"></img>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#colete" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#colete" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="adicionar">
+                                    <button class="btn btn-comprar">Comprar <i class="glyphicon glyphicon-shopping-cart"></i></button>   
+                                </div>
+
+                                <span class="preco">Preço R$ 150,00</span>
+                                <span class="marca"><img src="resources/img/combatAirSoft.png" width="50" height="50"></img></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="produtos">
+                            <div class="moldura">
+                                <div id="metralhadora" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#metralhadora" data-slide-to="0" class="active"></li>
+                                        <li data-target="#metralhadora" data-slide-to="1"></li>
+                                        <li data-target="#metralhadora" data-slide-to="2"></li>
+                                        <li data-target="#metralhadora" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="resources/img/metralhadora1.png" alt="metralhadora" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/metralhadora2.png" alt="metralhadora" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/metralhadora2.png" alt="metralhadora" width="460" height="345"></img>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="resources/img/metralhadora3.png" alt="metralhadora" width="460" height="345"></img>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#metralhadora" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#metralhadora" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="adicionar">
+                                    <button class="btn btn-comprar">Comprar <i class="glyphicon glyphicon-shopping-cart"></i></button>   
+                                </div>
+
+                                <span class="preco">Preço R$ 180,00</span>
+                                <span class="marca"><img src="resources/img/combatAirSoft.png" width="50" height="50"></img></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="rodape">
+                    <span class="logosort"><img src="resources/img/logoPng.png" width="75" height="50"></img></span>
+                </div>
+            </div>
+            <ui:insert></ui:insert>
+
+        </div>
+    </h:body>
+</html>
+
