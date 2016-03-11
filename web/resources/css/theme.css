@@ -25,17 +25,112 @@
 }
 
 .centro{
-    margin: -20px 0px;
+    margin: auto;
     width: 100%;
-    height: 500px;
+    height: 400px;
+}
+
+.descricao{
+    width: 235px;
+    height: 424px;
+    padding: 10px;
+    top: 0px;
+    position: absolute;
+    left: 330px;
+    background: azure;
+    font-size: 12pt;
+    border: 5px solid;
+    border-color: #435F2D;
+    font-weight: bold;
+}
+
+.descricaopreco{
+    width: 204px;
+    height: 280px;
+    padding: 10px;
+    margin-bottom: 5px;
+    top: -5px;
+    position: relative;
+    left: 0px;
+    background: #C2DCDC;
+    font-size: 10pt;
+    border-color: darkcyan;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.descricaopreco h3{
+    width: 204px;
+    top: 110px;
+    margin: auto;
+    position: relative;
+    left: -10px;
+    background: #F0FFFF;
+    font-size: 23pt;
+    font-weight: bold;
+    text-align: justify;
+    color: #AF1313;
+    text-align: right;
+    text-shadow: 1px 1px 1px #7D8E8E;
+}
+
+.passemouse{
+    position: absolute;
+    top: 275px;
+    left: 50px;
+}
+.descricaopreco h4{
+    width: 55px;
+    top: 70px;
+    position: relative;
+    left: -10px;
+    background: #F0FFFF;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: justify;
+    color: #AF1313;
+}
+
+.espaço{
+    height: 20px;
+}
+
+.descricaopreco p{
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: left;
+    height: 110px;
+    margin-top: -10px;
+    padding: 5px 0px;
+}
+
+.zoom{
+    width: 319px;
+    height: 424px;
+    padding: 5px 5px;
+    background: #435F2D;
+    margin-bottom: 10px;
+    margin: 0px 5px
+}
+
+.galeria{
+    margin: 5px 0px;
 }
 
 .centro2{
     margin: -20px 0px;
-
     width: 100%;
     height: 500px;
 }
+
+.zoomContainer{
+    -webkit-transform: translateZ(0);
+    position:absolute;
+    left:80px;top:246px;
+    height:274px;
+    width:309px !important;
+}
+
 
 .produtos{
     display: block;
@@ -50,6 +145,21 @@
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
 
+}
+
+.detalhes{
+    margin: -45px 126px;
+    padding: 0px 10px;
+    width: 110px;
+    height: 36px;
+    background-color: rgb(79, 111, 74);
+    border-radius: 10px 0px 10px 0px;
+    color: #FFFFFF;
+    position: absolute;
+    font-size: 11pt;
+    font-family: helvetica;
+    float: right;
+    line-height: 36px;
 }
 
 .adicionar{
@@ -68,6 +178,10 @@
     width: 100%;
     height: 100%;
     border-radius: 15px 15px 0px 0px !important;
+}
+
+.moldura p{
+
 }
 
 .preco{
@@ -102,6 +216,33 @@
 }
 
 
+.btn-detalhes {
+    border-top: 1px solid #265573;
+    background: #33A01B;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 16px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
+.btn-detalhes:hover {
+    border-top-color: #62B54F;
+    background: #62B54F;
+    color: #ccc;
+}
+
+.btn-detalhes:active {
+    border-top-color: #62B54F;
+    background: #62B54F;
+}
+
 .btn-comprar {
     border-top: 1px solid #265573;
     background: #33A01B;
@@ -115,6 +256,7 @@
     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     text-decoration: none;
     vertical-align: middle;
+    width: 206px
 }
 
 .btn-comprar:hover {
@@ -146,12 +288,13 @@
 .cadastro{
     width: 183px;
     height: 48px;
-    margin: -140px 25px;
+    margin: -150px 25px;
     position: relative;
     float: right;
 }
 
 .carrinho{
+    top: -27px;
     width: 183px;
     height: 50px;
     margin: -70px 20px;
@@ -160,6 +303,7 @@
 }
 
 .carrinho:hover{
+    top: -27px;
     width: 183px;
     height: 50px;
     margin: -70px 20px;
@@ -185,7 +329,7 @@
 
 .contador{
     width: 60px;
-    height: 100px;
+    height: 0px;
     margin: -30px 35px;
     position: relative;
     float: right;
@@ -195,9 +339,105 @@
     text-align: center;
 
 }
+.pf{
+
+    position: relative;
+    margin: 20px 0px;
+}
+
+.pj{
+    display: none;
+    position: relative;
+    margin: 20px 0px;
+}
+
+.teste{
+    position: absolute;
+    top: 10px;
+    width: 46%;
+    left: 625px;
+    background: white;
+    z-index: 50;
+    display: none; 
+}
+
+.finalizar{
+    width: 60px;
+    height: 0px;
+    margin: -40px 128px;
+    position: relative;
+    float: right;
+}
+
+.finalizarcompra{
+    height: 740px;
+
+}
+
+.finalizarcompra p{
+    font-size: 30pt;
+    color: #E7EBEC;
+    font-family: combat;
+    text-align: center;
+    background: cadetblue;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
 
 .busca{
-    margin: 10px 10px;
+   margin: 8px;
+}
+
+.boleto{
+    display: none;
+    position: relative;
+    margin: 20px 0px;
+}
+
+.cartao{
+    display: none;
+    position: relative;
+    margin: 20px 0px;
+}
+
+.bandeira{
+    width: 50px;
+}
+
+.frete{
+    width: 690px;
+    left: 237px;
+    position: relative;
+}
+
+.total{
+    width: 318px;
+    left: 0px;
+    top: 20px;
+    position: relative;
+    float: right;
+}
+
+.pagamento{
+    top: 0px;
+    height: 650px;
+}
+
+.pagamento p{
+    font-size: 30pt;
+    color: #E7EBEC;
+    font-family: combat;
+    text-align: center;
+    background: cadetblue;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.sair{
+    width: 47%;
+    left: 0px;
+    top: 20px;
+    position: relative;
+    float: right;
 }
 
 .logocombat{
@@ -208,27 +448,108 @@
     font-family: combat;
 }
 
+.subtotal{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
 .menu{
-
-    font-family: combat;
-    font-size: 25pt !important;
-    padding: 0px 10px!important;
-    margin: 2px 10px !important;
+    width: 100%;  
+    margin: 5px auto;
+    height: 50px;
+    display:table;
+    background: #627d4d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #627d4d 0%, #1f3b08 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #627d4d 0%,#1f3b08 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08',GradientType=0 );
 }
 
-.menu:hover{
-    color: #CFC032 !important;
+.menu ul{
     font-family: combat;
     font-size: 25pt !important;
-    padding: 0px 10px!important;
-    margin: 2px 10px !important;
+    list-style-type: none;
+    margin: auto;
 }
-.logocombat:hover{
+
+.menu ul li{
+    float: left;
+    position: relative;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    float: left;
+    color: #CFC032;
+    display: block;
+    width: auto;
+    line-height: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.menu ul li a:hover{
+    background: rgb(93, 104, 93);
+    
+}
+
+.menu ul li ul{
+    display: none;
+    position: absolute;
+    top:50px;
+    left: -40px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    width: 100px;
+}
+
+.menu ul li:hover ul{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    width: 100px;
+    z-index: 10;
+    
+}
+
+.menu ul li:hover{
+    
+    
+}
+
+.menu ul li ul a{
+    background: #294412;
+    color: #E7D946;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px;
+    width: 100px;
+}
+
+.logocombat a:hover{
 
     opacity: 0.65;
     -moz-opacity: 0.65;
     filter: alpha(opacity = 65);
 
+}
+
+.soldado{
+    position: absolute;
+    top: 6px;
+    left: 591px;
+   
 }
 
 .login{
@@ -241,44 +562,51 @@
 .textocombat{
     width: 375px;
     height: 140px;
-    margin: -145px 150px;
+    margin: -170px 150px;
     text-shadow: 0.1em 0.1em 0.2em black;
     font-size: 80pt;
     color: white;
+    text-decoration: none !important;
 }
 
-.textocombat:hover{
+.logocombat h5{
     width: 375px;
     height: 140px;
-    margin: -145px 150px;
-    text-shadow: 0.1em 0.1em 0.2em black;
-    font-size: 80pt;
+    position: relative;
+    left: 218px;
+    top: 125px;
+    font-size: 45pt;
+    font-size: 50pt;
     color: #CFC032;
 }
-
 
 .topo{
     height: 160px;
     margin: auto;
     padding: auto;
-    background-image: url(../../resources/img/fundo.png);
+    background-image: url(../../resources/img/topo.png);
+}
+
+.quantidade{
+    width: 26%;
+}
+
+.myModal1{
+    height:500px !important;
 }
 
 
 .rodape{
-    float: right;
-    bottom: 0px; 
+    position: relative;
     width: 100%; 
-    height: 60px; 
+    height: 100px; 
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#627d4d+0,1f3b08+100;Olive+3D */
     background: #627d4d; /* Old browsers */
     background: -moz-linear-gradient(top,  #627d4d 0%, #1f3b08 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  #627d4d 0%,#1f3b08 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08',GradientType=0 ); /* IE6-9 */
-
     font-size: 10pt;
-    height: 100px;
     margin: auto;
     padding: auto;
     text-align: center;

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:body>
+        <h1>Novo Produto</h1>
+        <h:form>
+            <fieldset>
+                <legend>Dados do Produto</legend>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Descrição: " for="descricao" /> 
+                    <h:inputText id="descricao" value="#{produtoBean.produto.descricao}"/>
+                    <h:outputLabel value="Marca: " for="marca" /> 
+                    <h:inputText id="marca" value="#{produtoBean.produto.marca}"/>
+                    <h:outputLabel value="Preço: R$" for="preco" /> 
+                    <h:inputText id="preco" value="#{produtoBean.produto.preco}"/>
+                    <h:commandButton value="Salvar" action="#{produtoBean.salvar}" />
+                </h:panelGrid>
+            </fieldset>
+        </h:form>
+
+        <h2>Lista dos Produtos</h2>
+        <h:dataTable value="#{produtoBean.produtos}" var="produto">
+            <h:column>
+                <h:outputText value="#{produto.id}" />
+            </h:column>
+            <h:column>
+                <h:outputText value="#{produto.marca} #{produto.descricao}" />
+            </h:column>
+            <h:column>
+                <h:outputText value="#{produto.preco}" />
+            </h:column>
+        </h:dataTable>
+
+    </h:body>
+
+
+</html>
