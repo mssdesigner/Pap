@@ -385,7 +385,9 @@
 
 
 .busca{
-   margin: 8px;
+   margin: 8px 25px;
+   float: right;
+   width: 50%;
 }
 
 .boleto{
@@ -488,7 +490,7 @@
 .menu ul li a{
     text-decoration: none;
     float: left;
-    color: #CFC032;
+    color: #DAE2E8;
     display: block;
     width: auto;
     line-height: 50px;
@@ -530,7 +532,7 @@
 
 .menu ul li ul a{
     background: #294412;
-    color: #E7D946;
+    color: #DAE2E8;
     height: 50px;
     line-height: 50px;
     margin: 0px;
@@ -550,6 +552,44 @@
     top: 6px;
     left: 591px;
    
+}
+
+.sexo table tbody tr td{
+    padding: 0px 15px;
+}
+
+.redessociais{
+    position: absolute;
+    top: 10px;
+    left: 176px;
+    width: 270px;
+    height: 152px;
+    
+}
+
+.redessociaislogo{
+    vertical-align: middle;
+    float: left   
+}
+
+.redessociaislogo p{
+    vertical-align: middle;
+    float: right;
+    font-size: 14pt;
+    color: aliceblue;
+    padding-left: 10px;
+    font-family: helvetica;
+    text-shadow: 1px 1px 1px black; 
+}
+
+.redessociaislogo a:hover{
+    vertical-align: middle;
+    float: right;
+    font-size: 14pt;
+    color: black;
+    padding-left: 10px;
+    font-family: helvetica;
+    text-shadow: 1px 1px 1px black; 
 }
 
 .login{

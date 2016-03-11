@@ -120,18 +120,18 @@ $(document).ready(function () {
     });
 });
 jQuery(function ($) {
-    $("#nascimento").mask("99/99/9999", {placeholder: "dd/mm/aaaa"});
-    $("#matricula").mask("999999", {placeholder: "______"});
-    $("#rg").mask("99.999.999-9", {placeholder: "__.___.___-_"});
-    $("#cpf").mask("999.999.999-99", {placeholder: "___.___.___-__"});
-    $("#cnpj").mask("99.999.999/9999-99", {placeholder: "__.___.___/___-__"});
-    $("#cep").mask("99999-999", {placeholder: "_____-___"});
-    $("#cepfrete").mask("99999-999", {placeholder: "_____-___"});
-    $("#tel").mask("(99) 9999.9999", {placeholder: "(   )___________"});
-    $("#tel1").mask("(99) 9999.9999", {placeholder: "(   )___________"});
-    $("#tel2").mask("(99) 9999.9999", {placeholder: "(   )___________"});
-    $("#celular").mask("(99) 99999.9999", {placeholder: "(   )____________"});
-    $("#numcartao").mask("9999.9999.9999.9999", {placeholder: "________________"});
+    $("#pf\\:dataNasc").mask("99/99/9999", {placeholder: "dd/mm/aaaa"});
+    $("#pf\\:rg").mask("99.999.999-9", {placeholder: "__.___.___-_"});
+    $("#pf\\:cpf").mask("999.999.999-99", {placeholder: "___.___.___-__"});
+    $("#pj\\:cnpj").mask("99.999.999/9999-99", {placeholder: "__.___.___/___-__"});
+    $("#pf\\:cep").mask("99999-999", {placeholder: "_____-___"});
+    $("#pj\\:ceppj").mask("99999-999", {placeholder: "_____-___"});
+    $("#pj\\:cepfrete").mask("99999-999", {placeholder: "_____-___"});
+    $("#pf\\:tel").mask("(99) 9999.9999", {placeholder: "(   )___________"});
+    $("#pj\\:tel1").mask("(99) 9999.9999", {placeholder: "(   )___________"});
+    $("#pj\\:tel2").mask("(99) 9999.9999", {placeholder: "(   )___________"});
+    $("#pf\\:celular").mask("(99) 99999.9999", {placeholder: "(   )____________"});
+    $("#pf\\:numcartao").mask("9999.9999.9999.9999", {placeholder: "________________"});
 });
 function validarCampos(form) {
     senha = document.cadastro.senha.value
