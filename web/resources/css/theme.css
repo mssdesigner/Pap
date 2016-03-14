@@ -184,6 +184,39 @@
 
 }
 
+.sobrenos{
+    background: rgba(55, 148, 111, 0.6);
+    color: azure;
+    padding: 10px;
+    box-shadow: 0px 0px 20px blanchedalmond;
+    margin: 15px 0px;
+    
+}
+
+.sobrenos h1{
+    text-align: center;
+    margin: auto;
+    color: #CABC31;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 15px;
+    font-family: helvetica;  
+}
+
+.textarea{
+    width: 92% !important;
+    position: relative;
+    top: 5px;
+    left: 14px;
+    margin-bottom: 5px;
+}
+
+.sobrenos p{
+    text-align: justify;
+    padding: 0px 10px;
+    text-indent: 30px;
+    margin-top: 10px;    
+}
+
 .preco{
     margin: -45px 120px;
     padding: 10px 10px;
@@ -550,7 +583,7 @@
 .soldado{
     position: absolute;
     top: 6px;
-    left: 591px;
+    left: 610px;
    
 }
 
@@ -561,7 +594,7 @@
 .redessociais{
     position: absolute;
     top: 10px;
-    left: 176px;
+    left: 180px;
     width: 270px;
     height: 152px;
     

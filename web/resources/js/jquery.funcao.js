@@ -12,7 +12,7 @@ $(document).ready(function () {
         $.fancybox(ez.getGalleryList());
         return false;
     });
-    
+
     $("#img02").elevateZoom({
         gallery: 'galeria02',
         galleryActiveClass: 'active',
@@ -24,7 +24,7 @@ $(document).ready(function () {
         $.fancybox(ez.getGalleryList());
         return false;
     });
-    
+
     $("#img03").elevateZoom({
         gallery: 'galeria03',
         galleryActiveClass: 'active',
@@ -36,7 +36,7 @@ $(document).ready(function () {
         $.fancybox(ez.getGalleryList());
         return false;
     });
-    
+
     $("#img04").elevateZoom({
         gallery: 'galeria04',
         galleryActiveClass: 'active',
@@ -65,7 +65,6 @@ $("#carrinho").mouseenter(function () {
 });
 
 
-
 function mostrar_abas(obj) {
 
     document.getElementById('boleto').style.display = "none";
@@ -78,8 +77,8 @@ function mostrar_abas(obj) {
             document.getElementById('cartao').style.display = "block";
             break
     }
-}
-;
+};
+
 $(document).ready(function () {
     $("#mostra_aba1").click(function (mostrar_abas) {
         $("#boleto").toggle();
@@ -88,8 +87,8 @@ $(document).ready(function () {
         $("#cartao").toggle();
     });
 });
-function mostrar_abas2(obj) {
 
+function mostrar_abas2(obj) {
 
     document.getElementById('pj').style.display = "none";
     switch (obj.id) {
@@ -100,8 +99,8 @@ function mostrar_abas2(obj) {
             document.getElementById('pj').style.display = "block";
             break
     }
-}
-;
+};
+
 $(document).ready(function () {
     $("#mostra_pf").click(function (mostrar_abas2) {
         $("#pj").hide();
@@ -112,6 +111,7 @@ $(document).ready(function () {
         $("#pj").toggle();
     });
 });
+
 $(document).ready(function () {
     $().hide();
     $().click(function () {
@@ -119,6 +119,7 @@ $(document).ready(function () {
         return false;
     });
 });
+
 jQuery(function ($) {
     $("#pf\\:dataNasc").mask("99/99/9999", {placeholder: "dd/mm/aaaa"});
     $("#pf\\:rg").mask("99.999.999-9", {placeholder: "__.___.___-_"});
@@ -133,6 +134,12 @@ jQuery(function ($) {
     $("#pf\\:celular").mask("(99) 99999.9999", {placeholder: "(   )____________"});
     $("#pf\\:numcartao").mask("9999.9999.9999.9999", {placeholder: "________________"});
 });
+
+function teste(pf) {
+
+    alert('Funcionou');
+}
+
 function validarCampos(form) {
     senha = document.cadastro.senha.value
     rep_senha = document.cadastro.rep_senha.value
