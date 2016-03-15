@@ -1,12 +1,16 @@
 package br.com.combat.entity;
 
+
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /*
  * Classe Pedido
@@ -17,15 +21,16 @@ import javax.persistence.SequenceGenerator;
 
 @SequenceGenerator(name = "PED_SEQ", sequenceName = "PED_SEQ", initialValue = 1, allocationSize = 1)
 @Entity
-public class Pedido implements Serializable{
-    
-    private static final Long serialVersionUID = 2L;
+public class Pedido implements EntidadeBase{
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PED_SEQ")
     private Long id;
-    private Date data_Hora;
-    private int qtd_itens;
+    @Temporal(TemporalType.DATE)
+    @Column(name="data_Hora")
+    private Date dataHora;
+    @Column(name="qtd_Itens")
+    private int qtdItens;
     private double valor;
     private String nf;
 
@@ -38,19 +43,19 @@ public class Pedido implements Serializable{
     }
 
     public Date getData_Hora() {
-        return data_Hora;
+        return dataHora;
     }
 
-    public void setData_Hora(Date data_Hora) {
-        this.data_Hora = data_Hora;
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
     }
 
-    public int getQtd_itens() {
-        return qtd_itens;
+    public int getQtdItens() {
+        return qtdItens;
     }
 
-    public void setQtd_itens(int qtd_itens) {
-        this.qtd_itens = qtd_itens;
+    public void setQtdItens(int qtdItens) {
+        this.qtdItens = qtdItens;
     }
 
     public double getValor() {
@@ -68,8 +73,5 @@ public class Pedido implements Serializable{
     public void setNf(String nf) {
         this.nf = nf;
     }
-    
-    
-    
 
 }

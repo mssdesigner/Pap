@@ -190,7 +190,7 @@
     padding: 10px;
     box-shadow: 0px 0px 20px blanchedalmond;
     margin: 15px 0px;
-    
+
 }
 
 .sobrenos h1{
@@ -202,12 +202,9 @@
     font-family: helvetica;  
 }
 
-.textarea{
-    width: 92% !important;
-    position: relative;
-    top: 5px;
-    left: 14px;
-    margin-bottom: 5px;
+.sobrenos img{
+    margin: 10px;
+    border-radius: 10px;  
 }
 
 .sobrenos p{
@@ -216,6 +213,80 @@
     text-indent: 30px;
     margin-top: 10px;    
 }
+
+.endereco p{
+    text-align: justify;
+    padding: 0px 10px;
+    margin-top: 10px;    
+}
+
+.endereco{
+    background: rgba(55, 148, 111, 0.6);
+    color: azure;
+    padding: 10px;
+    box-shadow: 0px 0px 20px blanchedalmond;
+    margin: 15px 0px;
+
+}
+
+.endereco h1{
+    text-align: center;
+    margin: auto;
+    color: #CABC31;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 15px;
+    font-family: helvetica;  
+}
+
+
+.textarea{
+    width: 92% !important;
+    position: relative;
+    top: 5px;
+    left: 14px;
+    margin-bottom: 5px;
+}
+
+.suprimentos{
+    background: rgb(66, 94, 44);
+    position: absolute;
+    float: left;
+    width: 282px;
+    top: 25px;
+    left: 268px;
+    height: 299px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.suprimentos p{
+    color: white;
+    padding: 0px 10px;
+}
+
+.suprimentos h2{
+    color: #B6DE60;
+    padding: 0px 10px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.precosuprimento{
+    margin: -45px 126px;
+    padding: 0px 10px;
+    width: 110px;
+    height: 36px;
+    background-color: rgb(79, 111, 74);
+    border-radius: 10px 0px 10px 0px;
+    color: #FFFFFF;
+    position: absolute;
+    font-size: 16pt;
+    font-family: helvetica;
+    float: right;
+    line-height: 36px;
+    font-weight: bold;
+
+}
+
+
 
 .preco{
     margin: -45px 120px;
@@ -238,14 +309,6 @@
     width: 50px;
     height: 50px;
     position: absolute;
-}
-
-.logosort{
-    margin: 0px 0px;
-    padding: 0px 0px;
-    width: 50px;
-    height: 50px;
-
 }
 
 
@@ -418,9 +481,9 @@
 
 
 .busca{
-   margin: 8px 25px;
-   float: right;
-   width: 50%;
+    margin: 8px 25px;
+    float: right;
+    width: 50%;
 }
 
 .boleto{
@@ -534,7 +597,7 @@
 
 .menu ul li a:hover{
     background: rgb(93, 104, 93);
-    
+
 }
 
 .menu ul li ul{
@@ -555,12 +618,12 @@
     float: left;
     width: 100px;
     z-index: 10;
-    
+
 }
 
 .menu ul li:hover{
-    
-    
+
+
 }
 
 .menu ul li ul a{
@@ -584,11 +647,15 @@
     position: absolute;
     top: 6px;
     left: 610px;
-   
+
 }
 
 .sexo table tbody tr td{
-    padding: 0px 15px;
+    padding: 0px 14px;
+}
+
+.sexo table{
+    margin: 0px -20px;
 }
 
 .redessociais{
@@ -597,7 +664,7 @@
     left: 180px;
     width: 270px;
     height: 152px;
-    
+
 }
 
 .redessociaislogo{
@@ -668,24 +735,33 @@
     height:500px !important;
 }
 
+.logosort{
+    margin: 0px auto;
+    position: relative;
+    left: 550px;
+
+}
+
+.rodape p{
+    font-size: 10pt;
+    margin: 5px;
+    padding: auto;
+    text-align: center;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
 
 .rodape{
     position: relative;
     width: 100%; 
-    height: 100px; 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#627d4d+0,1f3b08+100;Olive+3D */
+    height: 110px; 
+    padding: 5px;
     background: #627d4d; /* Old browsers */
     background: -moz-linear-gradient(top,  #627d4d 0%, #1f3b08 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  #627d4d 0%,#1f3b08 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08',GradientType=0 ); /* IE6-9 */
-    font-size: 10pt;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-    line-height:100px;
-    color: white;
-    text-shadow: 0.1em 0.1em 0.2em black;
 
 } 
 

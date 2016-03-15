@@ -380,94 +380,92 @@
                                                 </div>
                                             </div>
 
+                                            <!-- Formúlario Pessoa Física-->
                                             <div id="">
                                                 <h:form id="pf" class="form-horizontal pf" role="form">
 
-                                                    <div class="row">
-                                                        <a type="submit" class="btn btn-warning btn-block"
-                                                           jsfc="h:commandLink" action="#{testeBean.teste()}">
-                                                            TESTE
-
-                                                            <f:ajax execute="@this" render="@form"/>
-                                                        </a>
-                                                       
-                                                    </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="nome">Nome:</label>
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Nome:" for="nome"></h:outputLabel>
                                                         <div class="col-sm-9">
-                                                            <h:inputText value="#{pessoaFisicaBean.pf.nome}" id="nome" required="true" class="form-control" pt:placeholder="Nome Completo"></h:inputText>                                                            
+                                                            <h:inputText  value="#{pessoaFisicaBean.pf.nome}" id="nome"  styleClass="form-control" pt:placeholder="Nome Completo" ></h:inputText>
                                                         </div>
+
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="cpf">CPF:</label>
-                                                        <div class="col-sm-9">
-                                                            <h:inputText value="#{pessoaFisicaBean.pf.cpf}" id="cpf" required="true" class="form-control" pt:placeholder="CPF"></h:inputText>  
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="tel">Telefone:</label>
-                                                        <div class="col-sm-3">
-                                                            <h:inputText  id="tel" required="false" class="form-control" pt:placeholder="Telefone"></h:inputText>
-                                                        </div>
-
-                                                        <label class="control-label col-sm-2" for="celular">Celular:</label>
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="CPF:" for="cpf"></h:outputLabel>
                                                         <div class="col-sm-4">
-                                                            <h:inputText id="celular" required="false" class="form-control" pt:placeholder="Celular"></h:inputText>
+                                                            <p:inputText  value="#{pessoaFisicaBean.pf.cpf}" id="cpf"  styleClass="form-control" pt:placeholder="CPF" ></p:inputText>
                                                         </div>
-                                                    </div>
 
-
-
-                                                    <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="dataNasc">Data de Nascimento:</label>
-                                                        <div class="col-sm-4">
-                                                            <h:inputText value="#{pessoaFisicaBean.pf.dataNasc}" class="form-control" id="dataNasc" required="true" pt:placeholder="Data de Nascimento"></h:inputText>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="sexo">Sexo:</label>
-                                                        <div class="col-sm-6 sexo">
-                                                            <h:selectOneRadio value="#{pessoaFisicaBean.pf.sexo}" class="radio-inline">
+                                                        <h:outputLabel styleClass="control-label col-sm-1" value="Sexo:" for="sexo"></h:outputLabel>
+                                                        <div class="col-sm-5 sexo">
+                                                            <h:selectOneRadio id="sexo" value="#{pessoaFisicaBean.pf.sexo}" class="radio-inline">
                                                                 <f:selectItem class="col-sm-2" itemValue="M" itemLabel="Masculino"></f:selectItem>
                                                                 <f:selectItem class="col-sm-2" itemValue="F" itemLabel="Feminino"></f:selectItem>
                                                             </h:selectOneRadio>                                                           
                                                         </div>
+
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="">Endereço:</label>
-                                                    </div>
 
-                                                    <div class="form-group">
-
-                                                        <label class="control-label col-sm-2" for="rua">Rua:</label>
-                                                        <div class="col-sm-5"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.rua}" id="rua" required="true" class="form-control" pt:placeholder="Rua"></h:inputText>
-                                                        </div>
-
-                                                        <label class="control-label col-sm-2" for="num">Número:</label>
-                                                        <div class="col-sm-2"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.numero}" id="num" required="true" class="form-control" pt:placeholder="Nº"></h:inputText>
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Telefone:" for="tel"></h:outputLabel>
+                                                        <div class="col-sm-9">
+                                                            <h:inputText   id="tel"  styleClass="form-control" pt:placeholder="Telefone" ></h:inputText>
                                                         </div>
 
                                                     </div>
 
                                                     <div class="form-group">
 
-                                                        <label class="control-label col-sm-2" for="bairro">Bairro:</label>
-                                                        <div class="col-sm-3"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.bairro}" id="bairro" required="true" class="form-control" pt:placeholder="Bairro"></h:inputText>
-                                                        </div>
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Celular:" for="celular"></h:outputLabel>
+                                                        <div class="col-sm-9">
+                                                            <h:inputText  id="celular"  styleClass="form-control" pt:placeholder="Celular" ></h:inputText>
+                                                        </div>                                                       
+                                                    </div>
 
-                                                        <label class="control-label col-sm-2" for="cidade">Cidade:</label>
-                                                        <div class="col-sm-4"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.cidade}" id="cidade" required="true" class="form-control" pt:placeholder="Cidade"></h:inputText>
-                                                        </div>
+                                                    <div class="form-group">
 
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Data Nascimento:" for="dataNasc"></h:outputLabel>
+                                                        <div class="col-sm-9">
+                                                            <h:inputText  value="#{pessoaFisicaBean.pf.dataNasc}" id="dataNasc"  styleClass="form-control" pt:placeholder="Data de Nascimento" ></h:inputText>
+                                                        </div>                                                       
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" id="endereco" value="Endereço:" for="endereco"></h:outputLabel>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Rua:" for="rua"></h:outputLabel>
+                                                        <div class="col-sm-5">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.rua}" id="rua"  styleClass="form-control" pt:placeholder="Rua" ></h:inputText>
+                                                        </div> 
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Numero:" for="num"></h:outputLabel>
+                                                        <div class="col-sm-2">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.numero}" id="num"  styleClass="form-control" pt:placeholder="Nº" ></h:inputText>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Bairro:" for="bairro"></h:outputLabel>
+                                                        <div class="col-sm-3">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.bairro}" id="bairro"  styleClass="form-control" pt:placeholder="Bairro" ></h:inputText>
+                                                        </div> 
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Cidade:" for="cidade"></h:outputLabel>
+                                                        <div class="col-sm-4">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.cidade}" id="cidade"  styleClass="form-control" pt:placeholder="Cidade" ></h:inputText>
+                                                        </div>  
                                                     </div>
 
                                                     <div class="form-group">
@@ -507,45 +505,45 @@
 
                                                         </div>
 
-                                                        <label class="control-label col-sm-2" for="cep">CEP</label>
-                                                        <div class="col-sm-4"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.cep}" id="cep" required="true" class="form-control" pt:placeholder="CEP"></h:inputText>
-                                                        </div>
                                                     </div>
 
                                                     <div class="form-group">
 
-                                                        <label class="control-label col-sm-2" for="email">E-Mail:</label>
-                                                        <div class="col-sm-9"> 
-                                                            <h:inputText value="#{pessoaFisicaBean.p.email}" id="email" required="true" class="form-control" pt:placeholder="e-mail"></h:inputText>
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="E-mail:" for="email"></h:outputLabel>
+                                                        <div class="col-sm-9">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.email}" id="email"  styleClass="form-control" pt:placeholder="E-Mail" ></h:inputText>
                                                         </div>
 
                                                     </div>
 
+                                                    "
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2" for="senha">Senha:</label>
-                                                        <div class="col-sm-3"> 
-                                                            <h:inputSecret value="#{pessoaFisicaBean.p.senha}" id="senha" required="true" class="form-control" pt:placeholder="Senha"></h:inputSecret>
-                                                        </div>
 
-                                                        <label class="control-label col-sm-2" for="confirmasenha">Confirma:</label>
-                                                        <div class="col-sm-4"> 
-                                                            <h:inputSecret id="confirmasenha" required="true" class="form-control" pt:placeholder="Confirma Senha"></h:inputSecret>
-                                                        </div>
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Senha:" for="senha"></h:outputLabel>
+                                                        <div class="col-sm-3">
+                                                            <h:inputText  value="#{pessoaFisicaBean.p.senha}" id="senha"  styleClass="form-control" pt:placeholder="Senha" ></h:inputText>
+                                                        </div> 
+
+                                                        <h:outputLabel styleClass="control-label col-sm-2" value="Confirma:" for="confirma"></h:outputLabel>
+                                                        <div class="col-sm-4">
+                                                            <h:inputText  id="confirma"  styleClass="form-control" pt:placeholder="Cofirmar Senha" ></h:inputText>
+                                                        </div>  
                                                     </div>
-
-
 
                                                     <div class="modal-footer">
-                                                        <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
-                                                            <h:commandButton value="Salvar" action="#{pessoaFisicaBean.gravar}" styleClass="btn btn-primary" />
-                                                            <h:commandButton value="Limpar" action="#{produtoBean.salvar}" styleClass="btn btn-danger" />   
+                                                        <div class="">
 
+                                                            <h:commandButton value="Limpar"  styleClass="btn btn-danger" />                         
+                                                            <h:inputText value="#{pessoaFisicaBean.teste}">  </h:inputText>
+                                                            <p:commandButton value="TESTAR" action="#{pessoaFisicaBean.testar}" ajax="false"> </p:commandButton>
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+
                                                         </div>
 
                                                     </div>
+
+
 
                                                 </h:form>
                                             </div>
@@ -556,26 +554,26 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-sm-2" for="razaosocial">Razão Social:</label>
                                                         <div class="col-sm-9">
-                                                            <h:inputText id="razaosocial" required="true" class="form-control" pt:placeholder="Nome Completo da Empresa"></h:inputText>
+                                                            <h:inputText id="razaosocial" class="form-control" pt:placeholder="Nome Completo da Empresa"></h:inputText>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label class="control-label col-sm-2" for="cnpj">CNPJ:</label>
                                                         <div class="col-sm-9"> 
-                                                            <h:inputText id="cnpj" required="true" class="form-control" pt:placeholder="CNPJ"></h:inputText>
+                                                            <h:inputText id="cnpj" class="form-control" pt:placeholder="CNPJ"></h:inputText>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label class="control-label col-sm-2" for="tel1">Telefone:</label>
                                                         <div class="col-sm-3">
-                                                            <h:inputText id="tel1" required="true" class="form-control" pt:placeholder="Telefone"></h:inputText>
+                                                            <h:inputText id="tel1" class="form-control" pt:placeholder="Telefone"></h:inputText>
                                                         </div>
 
                                                         <label class="control-label col-sm-2" for="tel2">Telefone:</label>
                                                         <div class="col-sm-4">
-                                                            <h:inputText id="tel2" required="true" class="form-control" pt:placeholder="Telefone"></h:inputText>
+                                                            <h:inputText id="tel2" class="form-control" pt:placeholder="Telefone"></h:inputText>
                                                         </div>
                                                     </div>
 
@@ -587,12 +585,12 @@
 
                                                         <label class="control-label col-sm-2" for="rua">Rua:</label>
                                                         <div class="col-sm-5"> 
-                                                            <h:inputText id="rua" required="true" class="form-control" pt:placeholder="Rua"></h:inputText>
+                                                            <h:inputText id="rua" class="form-control" pt:placeholder="Rua"></h:inputText>
                                                         </div>
 
                                                         <label class="control-label col-sm-2" for="num">Número:</label>
                                                         <div class="col-sm-2"> 
-                                                            <h:inputText id="num" required="true" class="form-control" pt:placeholder="Nº"></h:inputText>
+                                                            <h:inputText id="num" class="form-control" pt:placeholder="Nº"></h:inputText>
                                                         </div>
 
                                                     </div>
@@ -601,12 +599,12 @@
 
                                                         <label class="control-label col-sm-2" for="bairro">Bairro:</label>
                                                         <div class="col-sm-3"> 
-                                                            <h:inputText id="bairro" required="true" class="form-control" pt:placeholder="Bairro"></h:inputText>
+                                                            <h:inputText id="bairro" class="form-control" pt:placeholder="Bairro"></h:inputText>
                                                         </div>
 
                                                         <label class="control-label col-sm-2" for="cidade">Cidade:</label>
                                                         <div class="col-sm-4"> 
-                                                            <h:inputText id="cidade" required="true" class="form-control" pt:placeholder="Cidade"></h:inputText>
+                                                            <h:inputText id="cidade" class="form-control" pt:placeholder="Cidade"></h:inputText>
                                                         </div>
 
                                                     </div>
@@ -650,7 +648,7 @@
 
                                                         <label class="control-label col-sm-2" for="ceppj">CEP</label>
                                                         <div class="col-sm-4"> 
-                                                            <h:inputText id="ceppj" required="true" class="form-control" pt:placeholder="CEP"></h:inputText>
+                                                            <h:inputText id="ceppj" class="form-control" pt:placeholder="CEP"></h:inputText>
                                                         </div>
                                                     </div>
 
@@ -658,7 +656,7 @@
 
                                                         <label class="control-label col-sm-2" for="email">E-Mail:</label>
                                                         <div class="col-sm-9"> 
-                                                            <h:inputText id="email" required="true" class="form-control" pt:placeholder="e-mail"></h:inputText>
+                                                            <h:inputText id="email" class="form-control" pt:placeholder="e-mail"></h:inputText>
                                                         </div>
 
                                                     </div>
@@ -667,12 +665,12 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-sm-2" for="senha">Senha:</label>
                                                         <div class="col-sm-3"> 
-                                                            <h:inputSecret id="senha" required="true" class="form-control" pt:placeholder="Senha"></h:inputSecret>
+                                                            <h:inputSecret id="senha" class="form-control" pt:placeholder="Senha"></h:inputSecret>
                                                         </div>
 
                                                         <label class="control-label col-sm-2" for="confirmasenha">Confirma:</label>
                                                         <div class="col-sm-4"> 
-                                                            <h:inputSecret id="confirmasenha" required="true" class="form-control" pt:placeholder="Confirma Senha"></h:inputSecret>
+                                                            <h:inputSecret id="confirmasenha" class="form-control" pt:placeholder="Confirma Senha"></h:inputSecret>
                                                         </div>
                                                     </div>
 
@@ -682,6 +680,7 @@
                                                             <h:commandButton value="Salvar" action="#{produtoBean.salvar}" styleClass="btn btn-primary" />
                                                             <h:commandButton value="Limpar" action="#{produtoBean.salvar}" styleClass="btn btn-danger" />                                                       
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+
                                                         </div>
 
                                                     </div>
@@ -721,7 +720,7 @@
                                 <li><a href="coletes.xhtml">coletes</a></li> 
                             </ul>
                         </li>
-                        <li><a href="#">suprimentos</a></li>                         
+                        <li><a href="suprimentos.xhtml">suprimentos</a></li>                         
                         <li><a href="sobre_nos.xhtml">sobre nós</a></li> 
 
                     </ul>
@@ -745,10 +744,17 @@
             <ui:insert></ui:insert>
             <div class="row">
                 <div class="rodape">
-                    <span class="logosort"><img src="resources/img/logoPng.png" width="75" height="50"></img></span>
+                    <div class="">
+                        <span class="logosort"><img src="resources/img/logoPng.png" width="75" height="50"></img></span>
+                        <p>Desenvolvido por SORT TECHNOLOGY SYSTEM</p>
+                        <p>© 2016 sorttechnologysystem.com.br Todos os Direitos Reservados.</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <h:form>
+
+        </h:form>
     </h:body>
 </html>
 

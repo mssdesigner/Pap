@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="PapPU" transaction-type="JTA">
-    <jta-data-source>PAP</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  <persistence-unit name="Marcelo" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>br.com.combat.entity.Local</class>
+    <class>br.com.combat.entity.Pedido</class>
+    <class>br.com.combat.entity.Pessoa</class>
+    <class>br.com.combat.entity.PessoaFisica</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@mssdesigner.sytes.net:1521:XE"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@pap.noip.me:1521:XE"/>
       <property name="javax.persistence.jdbc.user" value="PAP"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
       <property name="javax.persistence.jdbc.password" value="PAP"/>
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
     </properties>
   </persistence-unit>
 </persistence>

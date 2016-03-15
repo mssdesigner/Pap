@@ -1,7 +1,6 @@
 package br.com.combat.dao;
 
-import br.com.combat.entity.Pessoa;
-import br.com.combat.entity.PessoaFisica;
+import br.com.combat.entity.Local;
 
 /*
  * Classe teste
@@ -12,20 +11,15 @@ import br.com.combat.entity.PessoaFisica;
 public class Teste {
 
     public static void main(String[] args) throws Exception {
-        Pessoa p = new Pessoa();
-        PessoaFisica pf = new PessoaFisica();
-        PessoaFisicaDAO pfdao = new PessoaFisicaDAO();
-        PessoaDAO pdao = new PessoaDAO();
+        Local local = new Local();
+        LocalDAO dao = new LocalDAO();
 
-        p.setRua("MSS");
-        p.setBairro("MSS");
-        p.setCep("MSS");
-        p.setEmail("MSS");
-        p.setEstado("MSS");
-        p.setSenha("MSS");
-        p.setNumero(12);
+        local.setId(1l);
+        local.setSala("MSS");
+        local.setPredio("MSS");
+        local.setCapacidade(4);
 
-        pdao.salvar(p);
-        System.out.println(p);
+        dao.salvar(local);
+        System.out.println(local);
     }
 }

@@ -24,8 +24,10 @@ public class PessoaFisicaBean {
     PessoaFisicaDAO pfdao = new PessoaFisicaDAO();
     PessoaDAO pdao = new PessoaDAO();
     
+    private String teste;
+    
     public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Pap_TestandoPU");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Marcelo");
         EntityManager em = factory.createEntityManager();
         return em;
     }
@@ -77,7 +79,17 @@ public class PessoaFisicaBean {
     public void setPdao(PessoaDAO pdao) {
         this.pdao = pdao;
     }
+
+    public String getTeste() {
+        return teste;
+    }
+
+    public void setTeste(String teste) {
+        this.teste = teste;
+    }
     
-    
+    public void testar(){
+        System.out.println(teste);
+    }
 
 }

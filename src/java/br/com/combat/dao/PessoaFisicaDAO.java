@@ -11,27 +11,6 @@ import javax.persistence.Persistence;
  * Universidade Metodista • Curso ADS • 4º Semestre 
  * Data 12/03/2016 • 12:38:11
  */
-public class PessoaFisicaDAO {
+public class PessoaFisicaDAO extends GenericoDAO<PessoaFisica> {
 
-    public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PapPU");
-        EntityManager em = factory.createEntityManager();
-        return em;
-    }
-    
-    public PessoaFisica salvar(PessoaFisica pf) {
-
-        EntityManager em = getEM();
-
-        try {
-            em.getTransaction().begin();
-            em.persist(pf);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-        return pf;
-    }
 }

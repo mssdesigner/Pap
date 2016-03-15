@@ -15,10 +15,9 @@ import javax.persistence.SequenceGenerator;
  */
 @SequenceGenerator(name = "PES_SEQ", sequenceName = "PES_SEQ", initialValue = 1, allocationSize = 1)
 @Entity
-public class Pessoa implements Serializable {
+public class Pessoa implements EntidadeBase {
 
-    private static final Long serialVersioUID = 1l;
-
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PES_SEQ")
     private Long id;
@@ -31,6 +30,7 @@ public class Pessoa implements Serializable {
     private String email;
     private String senha;
 
+    @Override
     public Long getId() {
         return id;
     }

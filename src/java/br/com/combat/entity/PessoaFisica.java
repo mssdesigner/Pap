@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-public class PessoaFisica implements Serializable {
+public class PessoaFisica implements EntidadeBase {
     
     @Id
     private Long id;
@@ -55,6 +55,7 @@ public class PessoaFisica implements Serializable {
         this.pessoa = pessoa;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
