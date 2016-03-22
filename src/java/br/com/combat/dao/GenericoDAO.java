@@ -14,28 +14,33 @@ import javax.persistence.Persistence;
 public class GenericoDAO<T extends EntidadeBase> {
 
     public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PapPU");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Marcelo");
         return factory.createEntityManager();
     }
 
     public T salvar(T t) {
 
-        EntityManager entityManager = getEM();
+        EntityManager em = getEM();
 
         try {
-            entityManager.getTransaction().begin();
-            System.out.println("Salvando as informações");
+            em.getTransaction().begin();
+
             if (t.getId() == null) {
-                entityManager.persist(t);
+                em.persist(t);
             } else {
-                t = entityManager.merge(t);
+                if (!em.contains(t)) {
+                    if (em.find(t.getClass(), t.getId()) == null) {
+                        throw new Exception("Erro ao atualizar");
+                    }
+                }
+                t = em.merge(t);
             }
-            entityManager.getTransaction().commit();
+            em.getTransaction().commit();
 
         } catch (Exception ex) {
-            entityManager.getTransaction().rollback();
+            em.getTransaction().rollback();
         } finally {
-            entityManager.close();
+            em.close();
         }
 
         return t;
@@ -57,12 +62,7 @@ public class GenericoDAO<T extends EntidadeBase> {
         EntityManager em = getEM();
         T t = null;
 
-        try {
-            t = em.find(classe, id); //Consultar por ID
-        } finally {
-            em.close();
-        }
-        return t;
+        return t = em.find(classe, id); //Consultar por ID
 
     }
 }

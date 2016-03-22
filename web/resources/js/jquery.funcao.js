@@ -1,4 +1,10 @@
 
+$(function () {
+    $("#abascadastro").tabs();
+});
+
+
+
 $(document).ready(function () {
 
     $("#img01").elevateZoom({
@@ -77,7 +83,8 @@ function mostrar_abas(obj) {
             document.getElementById('cartao').style.display = "block";
             break
     }
-};
+}
+;
 
 $(document).ready(function () {
     $("#mostra_aba1").click(function (mostrar_abas) {
@@ -99,7 +106,8 @@ function mostrar_abas2(obj) {
             document.getElementById('pj').style.display = "block";
             break
     }
-};
+}
+;
 
 $(document).ready(function () {
     $("#mostra_pf").click(function (mostrar_abas2) {
@@ -132,15 +140,57 @@ jQuery(function ($) {
     $("#pj\\:tel1").mask("(99) 9999.9999", {placeholder: "(   )___________"});
     $("#pj\\:tel2").mask("(99) 9999.9999", {placeholder: "(   )___________"});
     $("#pf\\:celular").mask("(99) 99999.9999", {placeholder: "(   )____________"});
-    $("#pf\\:numcartao").mask("9999.9999.9999.9999", {placeholder: "________________"});
+    $("#cartaocredito\\:numcartao").mask("9999.9999.9999.9999", {placeholder: "________________"});
 });
 
 function teste(pf) {
-
-    alert('Funcionou');
+    bootbox.alert("Cadastrado com Sucesso");
 }
 
-function validarCampos(form) {
+$(function() {
+    // valida o formulário
+    $('#pf').validate({
+        // define regras para os campos
+        rules: {
+            nome: {
+                required: true,
+                minlength: 5
+            },
+            cpf: {
+                required: true,
+                
+            },
+            telefone: {
+                required: true
+            },
+            matricula: {
+            	required: true,
+            	number: true
+
+            },
+            login: {
+            	required: true,
+            	number: true
+            },
+            codigo: {
+            	required: true,
+            	number: true
+            }
+
+        },
+        // define messages para cada campo
+        messages: {
+            nome: "Preencha o seu nome",
+            cpf: "Preencha seu cpf",
+            matricula: "Informe a matrícula",
+            login: "Informe o login",
+            codigo: "Informe o código",
+            telefone: "Informe o telefone"
+        }
+    });
+});
+
+function validarCampos(pf) {
     senha = document.cadastro.senha.value
     rep_senha = document.cadastro.rep_senha.value
     if (senha != rep_senha) {
@@ -167,3 +217,7 @@ function naoautenticado() {
     alert("Usuario ou senha incorreto");
     setTimeout("window.location='index.php' ", 500);
 }
+
+$(function () {
+    $("#teste").dialog();
+});

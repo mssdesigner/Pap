@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <title>e-commerce</title>
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />    
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/theme.css"/>  
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/jquery-ui.theme.min.css"/>   
+        <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/img/logo.ico"/> 
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/jquery.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/jquery-ui.min.js"></script> 
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>      
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/jquery.zoom.min.js"></script>   
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/resources/js/jquery.funcao.js"></script> 
+
+    </h:head>
+    <h:body>
+        <div class="container fundo">
+            <div class="row">
+                <div class="">
+                    <div class="topo">
+
+                        <div class="soldado">
+                            <img src="resources/img/soldado.png"></img>
+                            <div class="redessociais">
+
+                                <div class="redessociaislogo">                                    
+                                    <a href="#"><img src="resources/img/facebook.png" width="25" height="25"></img>
+                                        <p>facebook.com/combat</p></a>
+                                </div>
+
+                                <div class="redessociaislogo">                                    
+                                    <a href="#"><img src="resources/img/instagram.png" width="25" height="25"></img>
+                                        <p>instagram.com/combat</p></a>
+                                </div>
+
+                                <div class="redessociaislogo">                                    
+                                    <a href="#"><img src="resources/img/twitter.png" width="25" height="25"></img>
+                                        <p>twitter.com/combat</p></a>
+                                </div>
+
+                                <div class="redessociaislogo">                                    
+                                    <a href="#"><img src="resources/img/whatsapp.png" width="25" height="25"></img>
+                                        <p>+55 11 0.1111.2222</p></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="logocombat">
+                            <a href="index.xhtml"><img src="resources/img/combatAirSoft.png" width="100%" height="100%"></img></a>
+                            <p class="textocombat">Combat AirSoft</p>
+                            <h5>Sua loja virtual</h5>
+                        </div>
+
+                    </div> 
+
+                    <div class="row">
+                        <div class="carrinho" >
+                            <img id="carrinho" src="resources/img/carrinho.png"></img>
+                            <p>Minhas Compras</p>
+                            <div class="contador">
+                                <label for="contador">Itens '0'</label>  
+                            </div>
+                        </div> 
+                        <div class="finalizar">
+
+                            <div>
+                                <a href="#finalizar" role="button" class="btn btn-success btn-mini" data-toggle="modal">Finalizar Compra <i class="icon-white glyphicon glyphicon-ok"></i></a>
+                            </div>
+                            <!-- Modal -->
+                            <div id="finalizar" class="modal fade" tabindex="-1" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+
+                                    <div id="finalizarcompra" class="modal-content finalizarcompra">
+                                        <p>Meu Pedido</p>
+                                        <div class="modal-body finalizarcompra ">
+                                            <div id="listapedido" class="row">
+
+                                                <div  class="table-responsive col-md-12">
+                                                    <table class="table table-striped" cellspacing="0" cellpadding="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Produto</th>
+                                                                <th>Quantidade</th>
+                                                                <th>Valor Unitário</th>
+                                                                <th>Valor Total</th>
+                                                                <th class="actions"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td>aa PI0003</td>
+                                                                <td class="col-xs-3">
+                                                                    <div class="col-xs-10 input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">-</button>
+                                                                        </span>
+                                                                        <input type="text" class="form-control" value="5"/>
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">+</button>
+                                                                        </span>
+                                                                    </div><!-- /input-group -->
+                                                                </td>
+                                                                <td>R$ 5,00</td>
+                                                                <td>R$ 25,00</td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Capacete CA0002</td>
+                                                                <td class="col-xs-3">
+                                                                    <div class="col-xs-10 input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">-</button>
+                                                                        </span>
+                                                                        <input type="text" class="form-control" value="2"/>
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">+</button>
+                                                                        </span>
+                                                                    </div><!-- /input-group -->
+                                                                </td>
+                                                                <td>R$ 5,00</td>
+                                                                <td>R$ 10,00</td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Capacete CA0002</td>
+                                                                <td class="col-xs-3">
+                                                                    <div class="col-xs-10 input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">-</button>
+                                                                        </span>
+                                                                        <input type="text" class="form-control" value="2"/>
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">+</button>
+                                                                        </span>
+                                                                    </div><!-- /input-group -->
+                                                                </td>
+                                                                <td>R$ 5,00</td>
+                                                                <td>R$ 10,00</td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Metralhadora ME0022</td>
+                                                                <td class="quantidade">
+                                                                    <div class="col-xs-10 input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">-</button>
+                                                                        </span>
+                                                                        <input type="text" class="form-control" value="10"/>
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">+</button>
+                                                                        </span>
+                                                                    </div><!-- /input-group -->
+                                                                </td>
+                                                                <td>R$ 5,00</td>
+                                                                <td>R$ 50,00</td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Metralhadora ME0022</td>
+                                                                <td class="col-xs-3">
+                                                                    <div class="col-xs-10 input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">-</button>
+                                                                        </span>
+                                                                        <input type="text" class="form-control" value="10"/>
+                                                                        <span class="input-group-btn">
+                                                                            <button class="btn btn-success" type="button">+</button>
+                                                                        </span>
+                                                                    </div><!-- /input-group -->
+                                                                </td>
+                                                                <td>R$ 5,00</td>
+                                                                <td>R$ 50,00</td>
+                                                                <td class="actions">
+                                                                    <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+
+                                            <div id="frete" class="frete">
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="">Frete</span>
+                                                        <input type="text" class="form-control" placeholder="digite o seu cep" id="cepfrete"/>
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-info" type="button">Calcular</button>
+                                                        </span>
+
+                                                    </div><!-- /input-group -->
+                                                </div><!-- /.col-lg-6 -->
+
+                                            </div>
+
+                                            <div id="total" class="total">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item"><span class="badge">R$ 25,00</span> Sub-Total</li>
+                                                    <li class="list-group-item"><span class="badge">R$ 10,00</span> Frete</li>
+                                                    <li class="list-group-item"><span class="badge">R$ 35,00</span> Total</li> 
+                                                </ul>
+
+                                            </div>
+
+                                            <div id="sair" class="sair">
+
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">Continuar Comprando</button>
+                                                    <a href="#pagamento" role="button" data-toggle="modal" class="btn btn-info">Pagamento</a>
+                                                </div>    
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="pagamento" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content pagamento">
+
+                                        <p>Pagamento</p>
+
+                                        <div class="modal-body pagamento">
+
+                                            <div class="">
+
+                                                <a href="#"  id="mostra_aba1" class="btn btn-info">Boleto Bancário</a> 
+                                                <a href="#"  id="mostra_aba2" class="btn btn-info">Cartão de Crédito</a> 
+
+
+                                                <!-- abas -->
+                                                <div id="boleto" class="boleto">
+                                                    <a href="#"  id="" class="btn btn-primary">Gerar Boleto</a>
+                                                </div>
+                                                <div id="cartao" class="cartao">
+
+                                                    <form class="form-horizontal" role="form">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Nome do Titular:</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control" id="focusedInput" type="text" value=""/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="numcartao" class="col-sm-4 control-label">Número do Cartão:</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control" id="numcartao" type="text" placeholder=""/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="codseguranca" class="col-sm-4 control-label">Códido de Segurança:</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control" id="codseguranca" type="text" placeholder=""/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="codseguranca" class="col-sm-4 control-label">Data de Validade:</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control" id="codseguranca" type="date" placeholder=""/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <label for="" class="col-sm-4 control-label">Bandeira:</label>
+                                                            <div class="col-sm-8">
+                                                                <label class="radio-inline"><input type="radio" name="optradio"/><img class="bandeira" src="resources/img/visa.png"></img></label>
+                                                                <label class="radio-inline"><input type="radio" name="optradio"/><img class="bandeira" src="resources/img/master.png"></img></label>
+                                                                <label class="radio-inline"><input type="radio" name="optradio"/><img class="bandeira" src="resources/img/elo.png"></img></label>
+                                                                <label class="radio-inline"><input type="radio" name="optradio"/><img class="bandeira" src="resources/img/american.png"></img></label>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button class="btn" data-dismiss="modal" aria-hidden="true">Voltar</button>
+                                                <button class="btn btn-primary">Finalizar Compra</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cadastro">
+                            <button type="button" class="btn btn-info btn-lg botao" data-toggle="modal" data-target="#login">Login</button>
+
+                            <!-- Modal -->
+                            <div id="login" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label for="usuario"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+                                                    <input type="email" class="form-control" id="usuario" placeholder="digite o email" required="true"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="senha"><span class="glyphicon glyphicon-eye-open"></span> Senha</label>
+                                                    <input type="password" class="form-control" id="senha" placeholder="digite a senha" required="true"/>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-info btn-lg botao" data-toggle="modal" data-target="#cadastro">Cadastre-se</button>
+
+
+                            <!-- Modal -->
+
+                            <div id="cadastro" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content finalizarcompra">
+                                        <p>Formulário de Cadastro</p>
+
+                                        <div id="abascadastro" class="">
+                                            <ul>
+                                                <li><a href="#pessoafisica">Pessoa Fisíca</a></li>
+                                                <li><a href="#pessoajuridica">Pessoa Jurídica</a></li>
+                                            </ul>
+                                            <div id="pessoafisica" class="modal-body">
+
+                                                <!-- Formúlario Pessoa Física-->
+                                                <div>
+                                                    <h:form id="pf" class="form-horizontal" role="form">
+
+                                                        <fieldset>
+                                                            <legend>Dados Pessoais</legend>
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Nome:" for="nome"></h:outputLabel>
+                                                                <div class="col-sm-10">
+                                                                    <p:inputText  value="#{pessoaFisicaBean.pf.nome}" id="nome"  styleClass="form-control" pt:placeholder="Nome Completo" ></p:inputText>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="CPF:" for="cpf"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.pf.cpf}" id="cpf"  styleClass="form-control" pt:placeholder="CPF" ></h:inputText>
+                                                                </div>
+
+                                                                <h:outputLabel styleClass="control-label col-sm-1" value="Sexo:" for="sexo"></h:outputLabel>
+                                                                <div class="col-sm-5 sexo">
+                                                                    <h:selectOneRadio id="sexo" value="#{pessoaFisicaBean.pf.sexo}" class="radio-inline">
+                                                                        <f:selectItem class="col-sm-2" itemValue="M" itemLabel="Masculino"></f:selectItem>
+                                                                        <f:selectItem class="col-sm-2" itemValue="F" itemLabel="Feminino"></f:selectItem>
+                                                                    </h:selectOneRadio>                                                           
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Telefone:" for="tel"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText   id="tel"  styleClass="form-control" pt:placeholder="Telefone" ></h:inputText>
+                                                                </div>
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Celular:" for="celular"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  id="celular"  styleClass="form-control" pt:placeholder="Celular" ></h:inputText>
+                                                                </div> 
+
+                                                            </div>
+
+
+
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Nascimento:" for="dataNasc"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText id="dataNasc"  styleClass="form-control" pt:placeholder="Data de Nascimento" ></h:inputText>
+                                                                </div>                                                       
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <fieldset>
+                                                            <legend>Endereço</legend>
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Rua:" for="rua"></h:outputLabel>
+                                                                <div class="col-sm-6">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.rua}" id="rua"  styleClass="form-control" pt:placeholder="Rua" ></h:inputText>
+                                                                </div> 
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Numero:" for="num"></h:outputLabel>
+                                                                <div class="col-sm-2">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.numero}" id="num"  styleClass="form-control" pt:placeholder="Nº" ></h:inputText>
+                                                                </div>  
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Bairro:" for="bairro"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.bairro}" id="bairro"  styleClass="form-control" pt:placeholder="Bairro" ></h:inputText>
+                                                                </div> 
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Cidade:" for="cidade"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.cidade}" id="cidade"  styleClass="form-control" pt:placeholder="Cidade" ></h:inputText>
+                                                                </div>  
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label class="control-label col-sm-2" for="estado">Estado:</label>
+                                                                <div class="col-sm-4"> 
+                                                                    <h:selectOneMenu value="#{pessoaFisicaBean.p.estado}" class="form-control">
+                                                                        <f:selectItem itemLabel="selecione" itemValue="" />
+                                                                        <f:selectItem itemLabel="AC" itemValue="AC" />
+                                                                        <f:selectItem itemLabel="AL" itemValue="AL" />
+                                                                        <f:selectItem itemLabel="AP" itemValue="AP" />
+                                                                        <f:selectItem itemLabel="AM" itemValue="AM" />
+                                                                        <f:selectItem itemLabel="BA" itemValue="BA" />
+                                                                        <f:selectItem itemLabel="CE" itemValue="CE" />
+                                                                        <f:selectItem itemLabel="DF" itemValue="DF" />
+                                                                        <f:selectItem itemLabel="ES" itemValue="ES" />
+                                                                        <f:selectItem itemLabel="GO" itemValue="GO" />
+                                                                        <f:selectItem itemLabel="MA" itemValue="MA" />
+                                                                        <f:selectItem itemLabel="MT" itemValue="MT" />
+                                                                        <f:selectItem itemLabel="MS" itemValue="MS" />
+                                                                        <f:selectItem itemLabel="MG" itemValue="MG" />
+                                                                        <f:selectItem itemLabel="PA" itemValue="PA" />
+                                                                        <f:selectItem itemLabel="PB" itemValue="PB" />
+                                                                        <f:selectItem itemLabel="PR" itemValue="PR" />
+                                                                        <f:selectItem itemLabel="PE" itemValue="PE" />
+                                                                        <f:selectItem itemLabel="PI" itemValue="PI" />
+                                                                        <f:selectItem itemLabel="RJ" itemValue="RJ" />
+                                                                        <f:selectItem itemLabel="RN" itemValue="RN" />
+                                                                        <f:selectItem itemLabel="RS" itemValue="RS" />
+                                                                        <f:selectItem itemLabel="RO" itemValue="RO" />
+                                                                        <f:selectItem itemLabel="RR" itemValue="RR" />
+                                                                        <f:selectItem itemLabel="SC" itemValue="SC" />
+                                                                        <f:selectItem itemLabel="SP" itemValue="SP" />
+                                                                        <f:selectItem itemLabel="SE" itemValue="SE" />
+                                                                        <f:selectItem itemLabel="TO" itemValue="TO" />   
+                                                                    </h:selectOneMenu>
+
+                                                                </div>
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="CEP:" for="cep"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.cep}" id="cep"  styleClass="form-control" pt:placeholder="CEP" ></h:inputText>
+                                                                </div>
+
+                                                            </div>
+                                                        </fieldset>
+
+
+                                                        <fieldset>
+                                                            <legend>Login</legend>
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="E-mail:" for="email"></h:outputLabel>
+                                                                <div class="col-sm-10">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.email}" id="email"  styleClass="form-control" pt:placeholder="E-Mail" ></h:inputText>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Senha:" for="senha"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  value="#{pessoaFisicaBean.p.senha}" id="senha"  styleClass="form-control" pt:placeholder="Senha" ></h:inputText>
+                                                                </div> 
+
+                                                                <h:outputLabel styleClass="control-label col-sm-2" value="Confirma:" for="confirma"></h:outputLabel>
+                                                                <div class="col-sm-4">
+                                                                    <h:inputText  id="confirma"  styleClass="form-control" pt:placeholder="Cofirmar Senha" ></h:inputText>
+                                                                </div>  
+
+                                                            </div>
+                                                        </fieldset>
+                                                        <div class="modal-footer">
+                                                            <div class="">
+
+
+                                                                <button type="reset" class="btn btn-danger">Limpar</button>
+
+                                                                <h:commandButton value="Salvar" styleClass="btn btn-success" action="#{pessoaFisicaBean.gravar}" />
+
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                    </h:form>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div id="pessoajuridica" class="modal-body">
+                                                <h1>OLALALA</h1>
+                                            </div>        
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div> 
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <nav class="menu">
+                    <ul>
+                        <li id="home"><a href="index.xhtml">home</a></li>
+                        <li><a>armas</a>
+                            <ul>
+                                <li><a href="pistolas.xhtml">pistolas</a></li>
+                                <li><a href="rifles.xhtml">rifles</a></li>                               
+                            </ul>
+                        </li>
+                        <li><a>equipamentos</a>
+                            <ul>                                 
+                                <li><a href="capacetes.xhtml">capacetes</a></li> 
+                                <li><a href="coletes.xhtml">coletes</a></li> 
+                            </ul>
+                        </li>
+                        <li><a href="suprimentos.xhtml">suprimentos</a></li>                         
+                        <li><a href="sobre_nos.xhtml">sobre nós</a></li> 
+
+                    </ul>
+
+                    <div class="busca">
+                        <div class="input-group">
+                            <input type="search" class="form-control" id="busca" name="s" placeholder="Digite uma palavra chave" value="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" id="btn-blog-search" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </input>    
+                        </div>
+                    </div>
+
+                </nav>
+
+
+            </div>
+
+
+            <ui:insert></ui:insert>
+            <div class="row">
+                <div class="rodape">
+                    <div class="">
+                        <span class="logosort"><img src="resources/img/logoPng.png" width="75" height="50"></img></span>
+                        <p>Desenvolvido por SORT TECHNOLOGY SYSTEM</p>
+                        <p>© 2016 sorttechnologysystem.com.br Todos os Direitos Reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h:form>
+
+        </h:form>
+    </h:body>
+</html>
+

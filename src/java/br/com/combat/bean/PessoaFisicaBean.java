@@ -1,14 +1,18 @@
 package br.com.combat.bean;
 
-import br.com.combat.dao.PessoaDAO;
-import br.com.combat.dao.PessoaFisicaDAO;
-import br.com.combat.entity.Pessoa;
-import br.com.combat.entity.PessoaFisica;
-import javax.faces.bean.ApplicationScoped;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.faces.bean.ViewScoped;
+import org.primefaces.context.RequestContext;
+import combat.ejb.ClienteFisicoRemoto;
+import combat.ejb.ClienteRemoto;
+import combat.entidade.Cliente;
+import combat.entidade.ClienteFisico;
+import combat.entidade.Telefone;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Classe PessoaFisicaBean
@@ -16,80 +20,87 @@ import javax.persistence.Persistence;
  * Universidade Metodista • Curso ADS • 4º Semestre 
  * Data 12/03/2016 • 12:39:45
  */
-@ApplicationScoped
+@ViewScoped
 @ManagedBean
 public class PessoaFisicaBean {
-    Pessoa p = new Pessoa();
-    PessoaFisica pf = new PessoaFisica();
-    PessoaFisicaDAO pfdao = new PessoaFisicaDAO();
-    PessoaDAO pdao = new PessoaDAO();
-    
-    private String teste;
-    
-    public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Marcelo");
-        EntityManager em = factory.createEntityManager();
-        return em;
+
+    Cliente p = new Cliente();
+    ClienteFisico pf = new ClienteFisico();
+    Telefone tel = new Telefone();
+    Telefone cel = new Telefone();
+    private String nasc;
+    @EJB
+    private ClienteRemoto cr;
+    @EJB
+    private ClienteFisicoRemoto cfr;
+
+    public void gravar() throws Exception {
+        
+        System.out.println("Nome " + pf.getNome());
+        if (pf.getNome() != null) {
+
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            tel.setTipo("Tel");
+            cel.setTipo("Cel");
+            List<Telefone> telefones = new ArrayList();
+            telefones.add(tel);
+            telefones.add(cel);
+            p.setTelefones(telefones);
+            tel.setCliente(p);
+            cel.setCliente(p);
+            p = cr.salvar(p);
+            pf.setDataNasc(df.parse(nasc));
+
+            pf.setPessoa(p);
+            cfr.salvar(pf);
+
+            RequestContext.getCurrentInstance().execute("teste();");
+
+            p = new Cliente();
+            pf = new ClienteFisico();
+        } else {
+            System.out.println("VAZIO");
+        }
     }
 
-    public void gravar() {
-        System.out.println("PASSAMOS AQUI");
-        EntityManager em =getEM();
-        System.out.println("P: " +p.getBairro() + p.getCep() + p.getCidade());
-        em.getTransaction().begin();
-        em.persist(p);
-        System.out.println("PF: " + pf.getNome() + pf.getCpf() + pf.getDataNasc());
-        pf.setPessoa(p);
-        em.persist(pf);
-        em.getTransaction().commit();
-        em.close();
- 
-        p = new Pessoa();
-        pf = new PessoaFisica();
-    }
-
-    public PessoaFisica getPf() {
-        return pf;
-    }
-
-    public void setPf(PessoaFisica pf) {
-        this.pf = pf;
-    }
-
-    public PessoaFisicaDAO getPfdao() {
-        return pfdao;
-    }
-
-    public void setPfdao(PessoaFisicaDAO pfdao) {
-        this.pfdao = pfdao;
-    }
-
-    public Pessoa getP() {
+    public Cliente getP() {
         return p;
     }
 
-    public void setP(Pessoa p) {
+    public void setP(Cliente p) {
         this.p = p;
     }
 
-    public PessoaDAO getPdao() {
-        return pdao;
+    public ClienteFisico getPf() {
+        return pf;
     }
 
-    public void setPdao(PessoaDAO pdao) {
-        this.pdao = pdao;
+    public void setPf(ClienteFisico pf) {
+        this.pf = pf;
     }
 
-    public String getTeste() {
-        return teste;
+    public Telefone getTel() {
+        return tel;
     }
 
-    public void setTeste(String teste) {
-        this.teste = teste;
+    public void setTel(Telefone tel) {
+        this.tel = tel;
     }
-    
-    public void testar(){
-        System.out.println(teste);
+
+    public Telefone getCel() {
+        return cel;
+    }
+
+    public void setCel(Telefone cel) {
+        this.cel = cel;
+    }
+
+    public String getNasc() {
+        return nasc;
+    }
+
+    public void setNasc(String nasc) {
+        this.nasc = nasc;
     }
 
 }

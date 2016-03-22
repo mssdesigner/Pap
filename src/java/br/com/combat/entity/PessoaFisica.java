@@ -1,12 +1,16 @@
 package br.com.combat.entity;
 
-import br.com.combat.entity.Pessoa;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,19 +20,24 @@ import javax.persistence.TemporalType;
  * Universidade Metodista • Curso ADS • 4º Semestre 
  * Data 12/03/2016 • 12:31:36
  */
-
+@SequenceGenerator(name = "PF_SEQ", sequenceName = "PF_SEQ", initialValue = 1, allocationSize = 1)
+@Table(name = "PESSOA_FISICA")
 @Entity
-public class PessoaFisica implements EntidadeBase {
-    
+public class PessoaFisica implements EntidadeBase, Serializable {
+
+    public static final long serialVersionUID = 1223123L;
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PF_SEQ")
     private Long id;
-    @Column(name="data_nasc")
+    @Column(name = "data_nasc")
     @Temporal(TemporalType.DATE)
     private Date dataNasc;
     private char sexo;
     private String cpf;
     private String nome;
     @OneToOne
+    @JoinColumn(name = "ID_PESSOA")
     private Pessoa pessoa;
 
     public Date getDataNasc() {
@@ -80,6 +89,4 @@ public class PessoaFisica implements EntidadeBase {
         this.sexo = sexo;
     }
 
-    
-    
 }

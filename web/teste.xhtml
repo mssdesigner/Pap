@@ -13,7 +13,14 @@ and open the template in the editor.
              xmlns:p="http://primefaces.org/ui"
              template="template.xhtml">  
 
-    
+    <h:form>
+        <h:commandButton onclick="javascript: function teste(pf);"/>
+            <h:inputText id="inpo1" value="#{seuBean.valor1}" title="#{bundle['nomeCampo1']}"/>
+            <h:inputText id="inp2" value="#{seuBean.valor2}" title="#{bundle['nomeCampo2']}"/>
+            <h:inputText id="inpo3" value="#{seuBean.valor3}" title="#{bundle['nomeCampo3']}"/>
+
+    </h:form>
+
 </ui:decorate>
 
 

@@ -15,7 +15,7 @@ import javax.persistence.SequenceGenerator;
  */
 @SequenceGenerator(name = "PES_SEQ", sequenceName = "PES_SEQ", initialValue = 1, allocationSize = 1)
 @Entity
-public class Pessoa implements EntidadeBase {
+public class Pessoa implements EntidadeBase, Serializable {
 
  
     @Id
@@ -102,5 +102,12 @@ public class Pessoa implements EntidadeBase {
     public void setRua(String rua) {
         this.rua = rua;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", numero=" + numero + ", rua=" + rua + ", cidade=" + cidade + ", cep=" + cep + ", estado=" + estado + ", bairro=" + bairro + ", email=" + email + ", senha=" + senha + '}';
+    }
+    
+    
 
 }
